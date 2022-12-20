@@ -1,0 +1,45 @@
+import java.util.*;
+
+class Sgpa {
+
+    public static void main(String[] args) {
+        String sub[] = { "java", "mefa", "flat", "dms", "dld" };
+        double credits[] = { 4, 2, 3, 2, 3 };
+        double sum = 0, total = 0;
+        double sgpa;
+        int gp = 0;
+        
+        Scanner s = new Scanner(System.in);
+        System.out.println("enter subject grade");
+        for (int i = 0; i < sub.length; i++) {
+            System.out.println("enter " + sub[i] + " grade");
+            char ch = s.next().charAt(0);
+            switch (ch) {
+                case 'a':
+                    gp = 10;
+                    break;
+                case 'b':
+                    gp = 9;
+                    break;
+                case 'c':
+                    gp = 8;
+                    break;
+                case 'd':
+                    gp = 0;
+                    break;
+                default:
+                    System.out.println("invalid");
+                    break;
+            }
+            if (gp == 0) {
+                System.out.println("fail");
+            }
+            total = total + credits[i] * gp;
+            sum = sum + credits[i];
+
+        }
+        sgpa = total / sum;
+        System.out.println("sgpa =" + sgpa);
+
+    }
+}
