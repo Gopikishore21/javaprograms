@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class fibanacci {
+    public static void main(String args[]) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("enter no of numbers");
+        int a = s.nextInt();
+        s.close();
+
+        int m = 0, n = 1;
+        System.out.print(0);
+        System.out.print(" " + 1);
+
+        for (int i = 2; i < a; i++) {
+            int sum = m + n;
+
+            System.out.print(" " + sum);
+            m = n;
+            n = sum;
+
+        }
+
+    }
+
+}
